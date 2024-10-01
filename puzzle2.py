@@ -9,7 +9,7 @@ data = pd.read_csv(r'C:\Users\linux.WINSERVER\Desktop\Trailblazers\Puzzle2\final
 print("Missing values in the dataset:")
 print(data.isnull().sum())
 
-data.dropna(inplace=True) 
+
 
 #Data Exploration 
 plt.figure(figsize=(10, 6))
@@ -19,6 +19,10 @@ plt.xlabel('X Coordinate')
 plt.ylabel('Y Coordinate')
 plt.grid()
 plt.show()
+
+# drop missing data
+
+data.dropna(inplace=True) 
 
 #Apply K-means clustering
 
