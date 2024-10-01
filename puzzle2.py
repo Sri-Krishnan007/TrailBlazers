@@ -41,9 +41,3 @@ for i in range(len(data)):
     x_index = np.where(unique_x == data['x'].iloc[i])[0][0]
     y_index = np.where(unique_y == data['y'].iloc[i])[0][0]
     image_data[y_index, x_index] = data['cluster'].iloc[i]
-
-#Display the reconstructed image
-plt.imshow(image_data, cmap='gray', interpolation='nearest')
-plt.title('Mystery Image Revealed!')
-plt.axis('off')  
-plt.show()
