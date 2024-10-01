@@ -1,0 +1,50 @@
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+import matplotlib.pyplot as plt 
+df=pd.read_csv(r"C:\Users\linux.WINSERVER\Desktop\Trailblazers\Puzzle3\Hungry.csv")
+
+df.drop('id', inplace=True, axis=1) 
+
+df.drop('iid', inplace=True, axis=1) 
+
+a=df.head(5)
+print(a)
+b=["target_binary"]
+if b =="?":
+    df = df.iloc[1:] 
+    print("Columns deleted")
+    
+else:
+    print("No Such columns")
+
+x=df[df.columns[range(7)]]
+y=df[df.columns[-1]]
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=42)   
+
+plt.scatter(X_test,y_test) 
+plt.show() 
+
+
+map 
+
+import pandas as pd
+from shapely.geometry import Point
+import geopandas as gpd
+from geopandas import GeoDataFrame
+import geodatasets
+
+df = pd.read_csv("C:\\Users\\linux.WINSERVER\\Downloads\\Hungry.csv", delimiter=',', skiprows=0, low_memory=False)
+
+geometry = [Point(xy) for xy in zip(df['Longitude'], df['Latitude'])]
+gdf = GeoDataFrame(df, geometry=geometry)  
+
+#this is a simple map that goes with geopandas
+# deprecated: world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+world = gpd.read_file(geodatasets.data.naturalearth.land['url'])
+gdf.plot(ax=world.plot(figsize=(10, 6)), marker='o', color='red', markersize=15);
+
+
