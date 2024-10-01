@@ -33,11 +33,3 @@ plt.ylabel('Y Coordinate')
 plt.grid()
 plt.show()
 
-#Create a grid image from clustered data
-unique_x = np.unique(data['x'])
-unique_y = np.unique(data['y'])
-image_data = np.zeros((len(unique_y), len(unique_x)))
-for i in range(len(data)):
-    x_index = np.where(unique_x == data['x'].iloc[i])[0][0]
-    y_index = np.where(unique_y == data['y'].iloc[i])[0][0]
-    image_data[y_index, x_index] = data['cluster'].iloc[i]
