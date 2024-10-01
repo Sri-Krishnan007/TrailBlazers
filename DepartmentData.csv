@@ -1,0 +1,20 @@
+department_id,department_name,tax_rate
+1,Talent Acquisition,0.22
+2,HR,0.15
+3,Customer Service,0.34
+4,Research and Development (R&D),0.33
+5,Public Relations,0.27
+6,Education,0.25
+7,Accounts,0.12
+8,Operations,0.3
+9,Finance,0.37
+10,Sales,0.15
+11,Technical,0.21
+12,Engineering,0.13
+13,Product Management,0.35
+14,Marketing,0.38
+15,Quality Assurance,0.33
+16,IT,0.37
+17,Legal,0.14
+18,Business Development,0.17
+19,Logistics,0.13
